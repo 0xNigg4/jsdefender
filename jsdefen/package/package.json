@@ -1,0 +1,63 @@
+{
+  "name": "@preemptive/jsdefender-cli",
+  "version": "2.7.0",
+  "description": "PreEmptive Protection JSDefender CLI",
+  "files": [
+    "index.js",
+    "/bin",
+    "ThirdPartyLicenses.txt"
+  ],
+  "keywords": [
+    "PJSD",
+    "JSDefender",
+    "JavaScript",
+    "protection",
+    "cli"
+  ],
+  "author": "PreEmptive",
+  "license": "PreEmptive",
+  "bugs": {
+    "url": "https://www.preemptive.com/support"
+  },
+  "homepage": "https://www.preemptive.com/products/javascript-protection/overview",
+  "repository": "git://github.com/preemptive/jsdefender.git",
+  "bin": {
+    "jsdefender": "./bin/jsdefender.js"
+  },
+  "scripts": {
+    "build:prod": "npm run build -- --mode=production --no-devtool",
+    "build": "npm run clean && webpack",
+    "link": "npm link --only=production",
+    "clean": "rimraf dist/",
+    "test": "ts-mocha -p ./test/tsconfig.json ./test/**/*.test.ts",
+    "lint": "eslint . --ext .js,.ts"
+  },
+  "peerDependencies": {
+    "@preemptive/jsdefender-core": ">=2.7.0"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^2.20.0",
+    "import-local": "^3.0.2"
+  },
+  "devDependencies": {
+    "@preemptive/jsdefender-client": "^2.7.0",
+    "@preemptive/jsdefender-core": "^2.7.0",
+    "@preemptive/jsdefender-shared": "^2.7.0",
+    "@types/chai": "^4.1.7",
+    "@types/expect": "^1.20.4",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^12.0.10",
+    "chai": "^4.2.0",
+    "expect": "^24.8.0",
+    "mocha": "^10.2.0",
+    "node": "^14.0.0",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^9.4.3",
+    "ts-mocha": "^10.0.0",
+    "typescript": "^5.0.4",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "gitHead": "5fa62a0966edd3ba96360263722b8d05639e0331"
+}
